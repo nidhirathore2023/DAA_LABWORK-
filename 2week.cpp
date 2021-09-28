@@ -72,3 +72,89 @@ int main()
 }
 */
 // 2-Question 
+//T.c=O(n^3)
+/*
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int a[n];
+        int flag=0;
+        for(int i=0;i<n;i++)
+        cin>>a[i];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                for(int k=0;k<n;k++)
+                {
+                    if((i!=j )&&(j!=k)&&(k!=i))
+                    {
+                        if(a[i]+a[j]==a[k])
+                        {
+                            cout<<i<<","<<j<<","<<k<<"\n";
+                            flag=1;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if(flag==0)
+        {
+            cout<<"Squence not found";
+        }
+    }
+    return 0;
+}
+*/
+
+//Question 3
+//TC=O(n)
+
+/*
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        vector <int>a;
+        int k;
+        cin>>k;
+        int m;
+        for(int i=0;i<n;i++)
+        {
+            cin>>m;
+            a.push_back(m);
+        }
+        sort(a.begin(),a.end());
+        int count=0;
+        for(int i=0;i<n-1;i++)
+        {
+            if(a[i+1]-a[i]==k)
+            {
+                count++;
+            }
+        }
+        if(a[n-1]-a[n-2]==k)
+        {
+            count++;
+        }
+        cout<<count<<" \n";
+    }
+    return 0;
+}
+*/
