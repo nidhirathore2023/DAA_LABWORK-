@@ -54,3 +54,46 @@ int main()
     return 0;
 }
 */
+
+//                                    bellmon ford algorithm
+
+/*
+#include<iostream>
+#include<vector>
+using namespace std;
+const int inf=1e7;
+int main()
+{
+    int v,e;
+    cin>>v>>e;
+    cout<<v<<e;
+    vector<vector<int>>edge;
+    for(int i=0;i<e;i++)
+    {
+        int u,v,w;
+        cin>>u>>v>>w;
+        edge.push_back({u,v,w});
+    }
+    int src;
+    cin>>src;
+    vector<int>dis(v,inf);
+    dis[src]=0;
+    for(int i=0;i<v-1;i++)
+    {
+        for(auto it:edge)
+        {
+            int u,v,w;
+            u=it[0];
+            v=it[1];
+            w=it[2];
+            dis[v]=min(dis[v],w+dis[u]);
+        }
+    
+    }
+    for(int i=0;i<v;i++)
+    {
+        cout<<dis[i]<<" ";
+    }
+    return 0;
+}
+*/
